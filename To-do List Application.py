@@ -2,13 +2,13 @@ import colorama
 from colorama import Fore
 colorama.init(autoreset = True)
 
-# Initialized 'tasks_lower' list to ensure case insensitivity
+# Initialized 'tasks_lower' to ensure case insensitivity
 tasks, statuses, tasks_lower = [], [], []
 
-# Appends task to 'tasks', status to 'statuses', and task in lowercase to 'task_lower'
+# Appends task to 'tasks', status to 'statuses', and task in lowercase to 'tasks_lower'
 def add_tasks():
     while True:
-        task_name = input('Name your task (type "done" when finished adding tasks or "undo" to undo your previous action): ')
+        task_name = input('Name your task (type "done" when finished adding tasks): ')
 
         if task_name.lower() == 'done':
             break
@@ -129,7 +129,7 @@ while True:
         if menu_selection < 1 or menu_selection > 5:
             raise ValueError
     except ValueError:
-        print(f'Please enter a valid numerical value and ensure the number has a corresponding menu option.')
+        print('Please enter a valid numerical value and ensure the number has a corresponding menu option.')
     else:
         if menu_selection == 1:
             print('\nAdd tasks:')
